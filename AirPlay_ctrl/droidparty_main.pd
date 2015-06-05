@@ -1,0 +1,115 @@
+#N canvas 45 175 640 429 10;
+#N canvas 94 224 747 530 stuff 0;
+#X obj 28 478 netsend;
+#X msg 56 223 disconnect;
+#X obj 28 500 tgl 15 0 connYa empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 248 56 r start;
+#X obj 235 186 r liga;
+#X msg 235 210 send /liga \$1;
+#X obj 247 110 r over;
+#X msg 247 137 send /over bang;
+#X msg 248 84 send /start bang;
+#X obj 210 260 r defBang;
+#X msg 210 285 send /defBang bang;
+#X msg 337 283 send /defSampN \$1;
+#X obj 323 413 r THR;
+#X msg 323 437 send /THR \$1;
+#X obj 211 329 r dev2;
+#X obj 320 327 r checkSoundIn;
+#X msg 320 353 send /checkSoundIn \$1;
+#X obj 37 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 38 46 sel 1 0;
+#X obj 372 57 r defSampN3;
+#X obj 420 89 r defSampN2;
+#X obj 362 165 r defSampN1;
+#X obj 416 204 r defSampN0;
+#X obj 372 86 sel 1;
+#X msg 372 110 3;
+#X obj 419 113 sel 1;
+#X msg 419 137 2;
+#X obj 362 186 sel 1;
+#X msg 362 210 1;
+#X obj 418 229 sel 1;
+#X msg 418 253 0;
+#X obj 58 22 r conn;
+#X floatatom 464 305 5 0 0 0 - - -, f 5;
+#X obj 610 82 netreceive 8001;
+#X msg 211 355 send /dev2 \$1;
+#X msg 36 139 connect 192.168.1.165 8000;
+#X text 86 68 192.168.1.85 X net \; 192.168.1.165 teter Android;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 13 0 0 0;
+#X connect 14 0 34 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 17 0 18 0;
+#X connect 18 0 35 0;
+#X connect 18 1 1 0;
+#X connect 19 0 23 0;
+#X connect 20 0 25 0;
+#X connect 21 0 27 0;
+#X connect 22 0 29 0;
+#X connect 23 0 24 0;
+#X connect 24 0 11 0;
+#X connect 25 0 26 0;
+#X connect 26 0 11 0;
+#X connect 27 0 28 0;
+#X connect 28 0 11 0;
+#X connect 29 0 30 0;
+#X connect 30 0 11 0;
+#X connect 31 0 17 0;
+#X connect 32 0 11 0;
+#X connect 34 0 0 0;
+#X connect 35 0 0 0;
+#X restore 21 216 pd stuff;
+#X obj 21 26 tgl 120 0 liga liga-r LIGA 17 16 0 20 -4034 -1 -1 0 1
+;
+#X obj 21 243 bng 150 250 50 0 start empty start 2 12 0 10 -204786
+-1 -1;
+#X obj 214 243 bng 150 250 50 0 over empty over 3 12 0 10 -261234 -1
+-1;
+#X obj 155 26 bng 100 250 50 0 defBang empty defSamp 0 7 0 10 -159808
+-257985 -191407;
+#X obj 21 156 tgl 50 1 show_spot empty showsp 0 40 0 10 -3 -159808
+-258113 1 1;
+#X obj 91 156 tgl 50 1 dev2 empty device 0 37 0 11 -83269 -1 -1 0 1
+;
+#X obj 395 131 cnv 15 200 270 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X obj 561 211 vsl 15 30 0 127 0 0 empty SoundIn empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 525 214 tgl 30 1 checkSoundIn empty SoundIn 0 37 0 11 -159808
+-1 -1 0 1;
+#X obj 532 286 vsl 50 100 0 1 0 0 THR empty THRESHOLD -20 -10 0 10
+-262130 -1 -1 0 1;
+#X obj 406 262 hradio 15 1 0 4 empty sampleN sample_n 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 406 292 tgl 100 1 textOn empty textOn 0 40 0 12 -232576 -1 -1
+1 1;
+#X obj 406 147 tgl 100 0 conn empty conn 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 524 147 tgl 50 0 empty connYa YA 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 265 24 cnv 15 330 110 empty empty samplesN 20 95 0 14 -262130
+-66577 0;
+#X obj 272 30 tgl 70 0 defSampN0 empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 355 30 tgl 70 0 defSampN1 empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 437 30 tgl 70 0 defSampN2 empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 519 30 tgl 70 0 defSampN3 empty empty 17 7 0 10 -262144 -1 -1
+0 1;

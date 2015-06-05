@@ -1,0 +1,18 @@
+#N canvas 1 80 450 300 10;
+#X obj 30 149 expr sqrt(($f1-$f4)*($f1-$f4)+($f2-$f5)*($f2-$f5)+($f3-$f6)*($f3-$f6))
+;
+#X obj 69 68 inlet;
+#X obj 279 73 inlet;
+#X obj 279 100 unpack f f f;
+#X obj 69 97 unpack f f f;
+#X obj 95 234 outlet;
+#X text 64 27 Outputs the euclidean distance of two colors;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 3;
+#X connect 3 1 0 4;
+#X connect 3 2 0 5;
+#X connect 4 0 0 0;
+#X connect 4 1 0 1;
+#X connect 4 2 0 2;
